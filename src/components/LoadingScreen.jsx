@@ -16,7 +16,7 @@ const LoadingScreen = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          SmartTech Solutions
+          Smart Software Services
         </motion.div>
         <div className="loading-dots">
           <div></div>

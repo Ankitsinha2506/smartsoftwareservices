@@ -119,13 +119,15 @@ export default App;
 function Home() {
   return (
     <>
+
       <Hero />
       <ServicesOverview />
       <PortfolioGrid />
+      <Services />
       <TechStack />
-       <BannerPortfolioGrid />
-       <WelcomeSection />
-        <StatsBar />
+      <BannerPortfolioGrid />
+      <WelcomeSection />
+      <StatsBar />
       <CompanyInfoSection />
       <Testimonials />
       <EmployeeTestimonials />

@@ -18,7 +18,6 @@ const navItems = [
   },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'About', href: '/about' },
-  // { name: 'Tech Stack', href: '/tech-stack' },
   { name: 'Testimonials', href: '/testimonials' },
   { name: 'Blog', href: '/blog' },
   { name: 'Careers', href: '/careers' },
@@ -37,93 +36,95 @@ const Navbar = () => {
   useMotionValueEvent(scrollY, 'change', (current) => {
     if (typeof current === 'number') {
       if (current < lastScrollY) {
-        setHidden(false);
+        setHidden(false); // Show navbar on scroll up
       } else if (current > 100 && current > lastScrollY) {
-        setHidden(true);
+        setHidden(true); // Hide navbar on scroll down after 100px
       }
       setLastScrollY(current);
     }
   });
 
   useEffect(() => {
-    setIsOpen(false);
+    setIsOpen(false); // Close mobile menu on route change
   }, [location]);
 
   const variants = {
-    visible: { y: 0 },
-    hidden: { y: '-100%' },
+    visible: { y: 0, transition: { duration: 0.35, ease: 'easeInOut' } },
+    hidden: { y: '-100%', transition: { duration: 0.35, ease: 'easeInOut' } },
   };
 
   return (
-    <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md transition-all duration-300"
-      animate={hidden ? 'hidden' : 'visible'}
-      variants={variants}
-      transition={{ duration: 0.35, ease: 'easeInOut' }}
-    >
-      <div className="container-custom flex items-center justify-between py-4">
-        <Link to="/" className="text-2xl font-bold gradient-text">
-          SmartTech
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center space-x-8">
-          {navItems.map((item) => (
-            <div key={item.name} className="relative group">
-              <Link
-                to={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-              >
-                {item.name}
-              </Link>
-              {item.dropdown && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
-                >
-                  {item.dropdown.map((subItem) => (
-                    <Link
-                      key={subItem.name}
-                      to={subItem.href}
-                      className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      {subItem.name}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Theme Toggle and Mobile Menu Button */}
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          <button
-            className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <motion.div
-        className={`lg:hidden overflow-hidden ${isOpen ? 'max-h-screen' : 'max-h-0'}`}
-        initial={false}
-        animate={{ maxHeight: isOpen ? '100vh' : 0 }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
+    <>
+      <motion.nav
+        className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md transition-all duration-300"
+        animate={hidden ? 'hidden' : 'visible'}
+        variants={variants}
       >
-        <div className="px-4 py-4 space-y-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+        <div className="container-custom flex items-center justify-between py-4 px-4 md:px-12">
+          <Link to="/" className="text-2xl font-bold gradient-text">
+            SmartTech
+          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <div key={item.name} className="relative group">
+                <Link
+                  to={item.href}
+                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                >
+                  {item.name}
+                </Link>
+                {item.dropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+                  >
+                    {item.dropdown.map((subItem) => (
+                      <Link
+                        key={subItem.name}
+                        to={subItem.href}
+                        className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Theme Toggle and Mobile Menu Button */}
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle theme"
+              title="Toggle light/dark mode"
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+            <button
+              className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <motion.div
+          className={`lg:hidden overflow-hidden bg-white/80 dark:bg-gray-900/80 backdrop-blur-md px-4 py-4 space-y-4`}
+          initial={false}
+          animate={{ maxHeight: isOpen ? '100vh' : 0 }}
+          transition={{ duration: 0.5, ease: 'easeInOut' }}
+          style={{ maxHeight: isOpen ? '100vh' : 0 }}
+        >
           {navItems.map((item) => (
             <div key={item.name}>
               <Link
@@ -149,9 +150,12 @@ const Navbar = () => {
               )}
             </div>
           ))}
-        </div>
-      </motion.div>
-    </motion.nav>
+        </motion.div>
+      </motion.nav>
+
+      {/* Spacer to avoid content jumping under fixed navbar */}
+      <div className="h-16" />
+    </>
   );
 };
 
