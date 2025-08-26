@@ -33,43 +33,56 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary-50 to-primary-100 dark:from-gray-900 dark:to-gray-800">
-      <div className="particles" ref={particlesRef}></div>
-      <div className="container-custom text-center z-10">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900"
+      style={{
+        backgroundImage: "url('https://i.pinimg.com/1200x/f8/ef/dd/f8efdd49ac8e7e4c4abc17ca922bfacc.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+      {/* Particles */}
+      <div className="particles absolute inset-0" ref={particlesRef}></div>
+
+      {/* Content */}
+      <div className="container-custom text-center z-10 relative">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text animate-gradient">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
             Smart Software Services Pvt. Ltd.
           </h1>
-          <div className="text-2xl md:text-4xl font-semibold mb-8 text-gray-700 dark:text-gray-300">
+          <div className="text-2xl md:text-4xl font-semibold mb-8 text-gray-200">
             <TypeAnimation
-              sequence={
-                [
-                  'Innovative Web Solutions',
-                  1000,
-                  'Advanced Mobile Apps',
-                  1000,
-                  'Reliable Cloud Services',
-                  1000,
-                  'AI-Powered Intelligence',
-                  1000,
-                ]}
+              sequence={[
+                'Innovative Web Solutions',
+                1000,
+                'Advanced Mobile Apps',
+                1000,
+                'Reliable Cloud Services',
+                1000,
+                'AI-Powered Intelligence',
+                1000,
+              ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
               className="inline-block"
             />
           </div>
-          <p className="text-xl mb-12 max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+          <p className="text-xl mb-12 max-w-2xl mx-auto text-gray-300">
             Delivering cutting-edge IT solutions to transform your business with expertise and innovation.
           </p>
           <motion.a
             href="#contact"
-            className="btn-primary"
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
