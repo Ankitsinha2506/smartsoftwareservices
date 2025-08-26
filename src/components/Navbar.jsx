@@ -10,8 +10,8 @@ const navItems = [
     name: 'Home',
     href: '/',
   },
-    { name: 'About', href: '/about' },
-  { name: 'Services',href: '/services',},
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services', },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -26,23 +26,12 @@ const Navbar = () => {
 
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  
+
 
   // Advanced scroll-based animations
   const navbarOpacity = useTransform(scrollY, [0, 100], [0.9, 0.95]);
   const navbarBlur = useTransform(scrollY, [0, 100], [8, 16]);
   const logoScale = useTransform(scrollY, [0, 100], [1, 0.9]);
-
-  
-  //   if (typeof current === 'number') {
-  //     if (current < lastScrollY) {
-  //       setHidden(false);
-  //     } else if (current > 100 && current > lastScrollY) {
-  //       setHidden(true);
-  //     }
-  //     setLastScrollY(current);
-  //   }
-  // });
 
   useEffect(() => {
     setIsOpen(false);
@@ -118,11 +107,11 @@ const Navbar = () => {
                 src={SmartLogo}
                 alt="SmartTech Logo"
                 className="h-10 w-10 object-contain"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
+              // whileHover={{ rotate: 360 }}
+              // transition={{ duration: 0.8, ease: "easeInOut" }}
               />
               <motion.span
-                className="text-2xl font-bold gradient-text"
+                className="text-2xl font-bold text-blue-600"
                 whileHover={{
                   backgroundPosition: "200% center",
                   transition: { duration: 0.5 }
@@ -134,7 +123,7 @@ const Navbar = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-10 ml-auto">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -148,7 +137,10 @@ const Navbar = () => {
                 <motion.div variants={linkVariants} initial="initial" whileHover="hover">
                   <Link
                     to={item.href}
-                    className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-300 font-medium relative"
+                    className={`flex items-center space-x-1 text-lg font-semibold transition-all duration-300 relative 
+    ${isActive(item.href)
+                        ? "text-primary-600 dark:text-primary-400"
+                        : "text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"}`}
                   >
                     <span>{item.name}</span>
                     {item.dropdown && (
@@ -156,7 +148,7 @@ const Navbar = () => {
                         animate={{ rotate: activeDropdown === item.name ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <ChevronDown size={16} />
+                        <ChevronDown size={18} />
                       </motion.div>
                     )}
                   </Link>
@@ -167,57 +159,13 @@ const Navbar = () => {
                     transition={{ duration: 0.3 }}
                   />
                 </motion.div>
-
-                {item.dropdown && (
-                  <motion.div
-                    initial="hidden"
-                    animate={activeDropdown === item.name ? "visible" : "hidden"}
-                    variants={dropdownVariants}
-                    className="absolute left-0 mt-2 w-56 rounded-xl shadow-2xl bg-white/95 dark:bg-gray-800/95 backdrop-blur-md ring-1 ring-black/5 dark:ring-white/10 overflow-hidden z-50"
-                  >
-                    <div className="py-2">
-                      {item.dropdown.map((subItem, subIndex) => (
-                        <motion.div
-                          key={subItem.name}
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: subIndex * 0.05 }}
-                        >
-                          <Link
-                            to={subItem.href}
-                            className="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-700/50 hover:text-primary-600 dark:hover:text-primary-400 transition-all duration-200"
-                          >
-                            {subItem.name}
-                          </Link>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
               </motion.div>
             ))}
           </div>
 
+
           {/* Controls */}
           <div className="flex items-center space-x-4">
-            <motion.button
-              onClick={toggleTheme}
-              className="p-3 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 relative overflow-hidden"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Toggle theme"
-            >
-              <motion.div
-                key={theme}
-                initial={{ rotate: -180, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 180, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-              </motion.div>
-            </motion.button>
-
             <motion.button
               className="lg:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
               onClick={() => setIsOpen(!isOpen)}
@@ -282,4 +230,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar; 

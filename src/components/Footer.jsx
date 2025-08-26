@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { 
-  Facebook, 
-  Twitter, 
-  Linkedin, 
-  Instagram, 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+  Mail,
+  Phone,
+  MapPin,
   ArrowUp,
   Heart,
   ExternalLink
@@ -109,50 +109,54 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Company Info */}
             <motion.div variants={itemVariants} className="lg:col-span-2">
-              <motion.div 
+              <motion.div
                 className="flex items-center space-x-3 mb-6"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <motion.img 
-                  src={SmartLogo} 
-                  alt="SmartTech Logo" 
+                <motion.img
+                  src={SmartLogo}
+                  alt="SmartTech Logo"
                   className="h-12 w-12 object-contain"
-                  whileHover={{ rotate: 360 }}
+                  // whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.8 }}
                 />
                 <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                   SMART Software Services
                 </h3>
               </motion.div>
-              
-              <motion.p 
+
+              <motion.p
                 className="text-gray-300 leading-relaxed mb-6 text-lg"
                 variants={itemVariants}
               >
-                Transforming ideas into digital reality with cutting-edge technology solutions. 
+                Transforming ideas into digital reality with cutting-edge technology solutions.
                 We specialize in innovative web applications, mobile development, and AI-powered solutions.
               </motion.p>
-              
-              <motion.div 
+
+              <motion.div
                 className="flex flex-wrap gap-4"
                 variants={itemVariants}
               >
-                <motion.div 
+                <motion.div
                   className="flex items-center space-x-2 text-gray-300"
                   whileHover={{ scale: 1.05, color: "#60a5fa" }}
                 >
-                  <MapPin size={18} className="text-blue-400" />
-                  <span className="text-sm">Pune, Maharashtra</span>
+                  <MapPin size={30} className="text-blue-400" />
+                  <span className="text-sm">Smart Software Services (I) Pvt. Ltd.,
+                    406 Changbhale Heights, Jawalkar Nagar Near Kalpataru Society,
+                    Phase-3, Pimple Gurav Pune - 411061
+
+                  </span>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="flex items-center space-x-2 text-gray-300"
                   whileHover={{ scale: 1.05, color: "#60a5fa" }}
                 >
                   <Phone size={18} className="text-green-400" />
                   <span className="text-sm">+91 7066511234</span>
                 </motion.div>
-                <motion.div 
+                <motion.div
                   className="flex items-center space-x-2 text-gray-300"
                   whileHover={{ scale: 1.05, color: "#60a5fa" }}
                 >
@@ -173,7 +177,7 @@ const Footer = () => {
                   { name: 'Portfolio', href: '/portfolio' },
                   { name: 'Contact', href: '/contact' }
                 ].map((link, index) => (
-                  <motion.li 
+                  <motion.li
                     key={link.name}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -183,14 +187,14 @@ const Footer = () => {
                       variants={linkHoverVariants}
                       whileHover="hover"
                     >
-                      <Link 
-                        to={link.href} 
+                      <Link
+                        to={link.href}
                         className="text-gray-300 hover:text-blue-400 transition-all duration-300 flex items-center space-x-2 group"
                       >
                         <span>{link.name}</span>
-                        <ExternalLink 
-                          size={14} 
-                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" 
+                        <ExternalLink
+                          size={14}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         />
                       </Link>
                     </motion.div>
@@ -210,7 +214,7 @@ const Footer = () => {
                   'AI & Machine Learning',
                   'Digital Transformation'
                 ].map((service, index) => (
-                  <motion.li 
+                  <motion.li
                     key={service}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -230,7 +234,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media & Newsletter */}
-          <motion.div 
+          <motion.div
             variants={itemVariants}
             className="mt-16 pt-8 border-t border-gray-700"
           >
@@ -249,8 +253,8 @@ const Footer = () => {
                       key={index}
                       href={social.href}
                       variants={socialVariants}
-                      whileHover={{ 
-                        scale: 1.2, 
+                      whileHover={{
+                        scale: 1.2,
                         rotate: 5,
                         transition: { duration: 0.2 }
                       }}
@@ -284,7 +288,7 @@ const Footer = () => {
         >
           <div className="container mx-auto max-w-7xl px-6 md:px-12 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <motion.p 
+              <motion.p
                 className="text-gray-400 text-sm flex items-center space-x-1"
                 whileHover={{ color: "#60a5fa" }}
               >
@@ -298,24 +302,24 @@ const Footer = () => {
                 </motion.div>
                 <span>in India</span>
               </motion.p>
-              
+
               <div className="flex space-x-6 text-sm text-gray-400">
-                <motion.a 
-                  href="#" 
+                <motion.a
+                  href="#"
                   className="hover:text-blue-400 transition-colors duration-300"
                   whileHover={{ y: -2 }}
                 >
                   Privacy Policy
                 </motion.a>
-                <motion.a 
-                  href="#" 
+                <motion.a
+                  href="#"
                   className="hover:text-blue-400 transition-colors duration-300"
                   whileHover={{ y: -2 }}
                 >
                   Terms of Service
                 </motion.a>
-                <motion.a 
-                  href="#" 
+                <motion.a
+                  href="#"
                   className="hover:text-blue-400 transition-colors duration-300"
                   whileHover={{ y: -2 }}
                 >

@@ -8,7 +8,7 @@ function ContactPrompt() {
           We’d love To Meet You In Person Or Via The Web!
         </h3>
         <a
-          href="/contact"
+          href="/contact/#contact-form"
           className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded transition hover:bg-white hover:text-sky-500"
         >
           <span className="mr-3">&#9993;</span>

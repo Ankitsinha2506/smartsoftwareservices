@@ -7,6 +7,8 @@ import ServiceHero from './ServiceHero';
 import ServiceFeatures from './ServiceFeatures';
 import MainServices from './MainServices';
 import ThreeColumnFeatures from './ThreeColumnFeatures';
+import CoreFeatures from './CoreFeatures';
+import ServiceContactSection from './ServiceContactSection';
 
 const services = [
   {
@@ -48,12 +50,6 @@ const Services = () => {
     <>
       {/* ServiceHero Section */}
       <ServiceHero />
-      {/* ServiceFeatures Section */}
-      <ServiceFeatures />
-      <ThreeColumnFeatures />
-
-      {/* Main Services */}
-      <MainServices />
       {/* Our Services Section */}
       <section id="services" className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
@@ -92,6 +88,18 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
+      {/* ServiceFeatures Section */}
+      <ServiceFeatures />
+
+      {/* Main Services */}
+      <MainServices />
+      <CoreFeatures />
+      <ThreeColumnFeatures />
+      <ServiceContactSection />
+
+
+
+
 
 
 
