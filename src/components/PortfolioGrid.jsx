@@ -18,19 +18,26 @@ function PortfolioGrid() {
                 Our Developed Software Applications
             </h2>
 
-            {/* Horizontally scrollable categories */}
-            <div className="flex gap-3 mb-8 px-2 overflow-x-auto no-scrollbar">
-                {categories.map((cat) => (
-                    <button
-                        key={cat}
-                        onClick={() => setActiveTab(cat)}
-                        className={`flex-shrink-0 min-w-[110px] px-5 py-2 rounded-md text-base font-medium border transition
+            {/* Horizontally scrollable categories with hidden scrollbar */}
+           <div
+  className="
+    flex gap-3 mb-8 px-2 overflow-x-auto
+    [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
+    justify-center
+    lg:justify-center
+  "
+>
+  {categories.map((cat) => (
+    <button
+      key={cat}
+      onClick={() => setActiveTab(cat)}
+      className={`flex-shrink-0 min-w-[110px] px-5 py-2 rounded-md text-base font-medium border transition
         ${activeTab === cat ? "bg-sky-600 text-white" : "bg-white border-gray-300 text-gray-700"}`}
-                    >
-                        {cat}
-                    </button>
-                ))}
-            </div>
+    >
+      {cat}
+    </button>
+  ))}
+</div>
 
 
             {/* Responsive portfolio grid */}
