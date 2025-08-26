@@ -3,23 +3,25 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import SmartLogo from '../assets/SmartLogo.png'
 
 const navItems = [
   { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+
   {
     name: 'Services',
     href: '/services',
-    dropdown: [
-      { name: 'Web Development', href: '/services#web-dev' },
-      { name: 'Mobile Apps', href: '/services#mobile' },
-      { name: 'Cloud Solutions', href: '/services#cloud' },
-      { name: 'AI & ML', href: '/services#ai' },
-    ],
+    // dropdown: [
+    //   { name: 'Web Development', href: '/services#web-dev' },
+    //   { name: 'Mobile Apps', href: '/services#mobile' },
+    //   { name: 'Cloud Solutions', href: '/services#cloud' },
+    //   { name: 'AI & ML', href: '/services#ai' },
+    // ],
   },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'About', href: '/about' },
-  { name: 'Testimonials', href: '/testimonials' },
-  { name: 'Blog', href: '/blog' },
+  // { name: 'Portfolio', href: '/portfolio' },
+  // { name: 'Testimonials', href: '/testimonials' },
+  // { name: 'Blog', href: '/blog' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -61,8 +63,12 @@ const Navbar = () => {
         variants={variants}
       >
         <div className="container-custom flex items-center justify-between py-4 px-4 md:px-12">
-          <Link to="/" className="text-2xl font-bold gradient-text">
-            SmartTech
+          <Link to="/" className="flex items-center">
+            <img
+              src={SmartLogo}   // 👉 replace with your logo path
+              alt="SmartTech Logo"
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Menu */}

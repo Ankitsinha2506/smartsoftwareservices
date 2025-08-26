@@ -9,7 +9,7 @@ const heroVariants = {
 
 function AboutHeroSection() {
   return (
-    <section className="relative w-full h-[300px] flex items-center justify-center overflow-hidden">
+    <section className="w-full h-screen bg-cover bg-center flex items-center justify-center">
       {/* Background image */}
       <img
         src={AboutImage}

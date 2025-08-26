@@ -123,7 +123,7 @@ function Home() {
       <Hero />
       <ServicesOverview />
       <PortfolioGrid />
-      <Services />
+      {/* <Services /> */}
       <TechStack />
       <BannerPortfolioGrid />
       <WelcomeSection />

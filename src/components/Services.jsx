@@ -3,6 +3,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { Code, Smartphone, Cloud, Brain } from 'lucide-react';
+import ServiceHero from './ServiceHero';
+import ServiceFeatures from './ServiceFeatures';
+import MainServices from './MainServices';
+import ThreeColumnFeatures from './ThreeColumnFeatures';
 
 const services = [
   {
@@ -35,48 +39,63 @@ const Services = () => {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, staggerChildren: 0.2 }
+    visible: {
+      opacity: 1, y: 0, transition: { duration: 0.5, staggerChildren: 0.2 }
     }
   };
 
   return (
-    <section id="services" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <motion.h2 
-          ref={ref}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          variants={cardVariants}
-          className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white"
-        >
-          Our Services
-        </motion.h2>
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-          variants={cardVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-        >
-          {services.map((service, index) => (
-            <motion.div 
-              key={index}
-              variants={cardVariants}
-              className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center"
-            >
-              <div className="text-blue-500 dark:text-blue-400 mb-4">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {service.description}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+    <>
+      {/* ServiceHero Section */}
+      <ServiceHero />
+      {/* ServiceFeatures Section */}
+      <ServiceFeatures />
+      <ThreeColumnFeatures />
+
+      {/* Main Services */}
+      <MainServices />
+      {/* Our Services Section */}
+      <section id="services" className="py-20 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            ref={ref}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            variants={cardVariants}
+            className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white"
+          >
+            Our Services
+          </motion.h2>
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={cardVariants}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+          >
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg text-center"
+              >
+                <div className="text-blue-500 dark:text-blue-400 mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+
+
+    </>
   );
 };
 
