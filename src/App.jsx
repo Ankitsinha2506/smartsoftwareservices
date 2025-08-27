@@ -130,7 +130,7 @@ function Home() {
       <CompanyInfoSection />
       <Testimonials />
       <EmployeeTestimonials />
-      <ContactPrompt />
+      <ContactPrompt />   
     </>
   );
 }

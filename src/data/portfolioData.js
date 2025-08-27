@@ -18,7 +18,7 @@ export const portfolioItems = [
   {
     title: "Smart Rider – Online Cab Sharing System",
     category: "Android App",
-    image: "https://i.pinimg.com/736x/6c/77/e0/6c77e08abdbc2b3cce9862bbb3737bbf.jpg",
+        image: "https://i.pinimg.com/736x/6c/77/e0/6c77e08abdbc2b3cce9862bbb3737bbf.jpg",
   },
   {
     title: "Hello Temp – On Demand Staffing Solutions",
