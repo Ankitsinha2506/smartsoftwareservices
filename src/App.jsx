@@ -5,31 +5,26 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 
+// Pages
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Careers from './pages/Careers';
+import Contact from './pages/Contact';
+
 // Components
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import ServicesOverview from './components/ServicesOverview';
 import Portfolio from './components/Portfolio';
 import TechStack from './components/TechStack';
 import Testimonials from './components/Testimonials';
 import Blog from './components/Blog';
-import Careers from './components/Careers';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LoadingScreen from './components/LoadingScreen';
 
 // Context
 import { ThemeProvider } from './context/ThemeContext';
-import PortfolioGrid from './components/PortfolioGrid';
-import BannerPortfolioGrid from './components/BannerPortfolioGrid';
-import WelcomeSection from './components/WelcomeSection';
-import StatsBar from './components/StatsBar';
-import CompanyInfoSection from './components/CompanyInfoSection';
-import EmployeeTestimonials from './components/EmployeeTestimonials';
-import ContactPrompt from './components/ContactPrompt';
+
 
 // Wrapper component to use location with AnimatePresence
 function AnimatedRoutes() {
@@ -116,21 +111,4 @@ function App() {
 
 export default App;
 
-function Home() {
-  return (
-    <>
 
-      <Hero />
-      <ServicesOverview />
-      <PortfolioGrid />
-      <TechStack />
-      <BannerPortfolioGrid />
-      <WelcomeSection />
-      <StatsBar />
-      <CompanyInfoSection />
-      <Testimonials />
-      <EmployeeTestimonials />
-      <ContactPrompt />   
-    </>
-  );
-}

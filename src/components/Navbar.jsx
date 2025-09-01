@@ -7,9 +7,7 @@ import SmartLogo from '../assets/SmartLogo.png';
 
 const navItems = [
   {
-    name: 'Home',
-    href: '/',
-  },
+    name: 'Home', href: '/'},
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services', },
   { name: 'Careers', href: '/careers' },
@@ -81,7 +79,7 @@ const Navbar = () => {
   };
 
   return (
-    
+
     <>
       <motion.nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"

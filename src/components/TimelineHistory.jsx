@@ -10,9 +10,9 @@ const timelineData = [
           "SMART SOFTWARE SERVICES started with website development in year of 2013 and continuously growing in its market share and employment as well. The company started with 5 individuals and now it's having 30+ satisfied employees and management staff.",
       },
       {
-        title: "",
+        title: "First Projects",
         content:
-          "The company started with web application development from HTML and made some websites using web application development tools now its has certified .NET developer and Android developers.",
+          "The company started with web application development from HTML and made some websites using web application development tools. Later, it expanded into .NET and Android development.",
       },
     ],
   },
@@ -20,70 +20,103 @@ const timelineData = [
     year: "2015",
     cards: [
       {
-        title: "One Year Later",
+        title: "Dynamic Growth",
         content:
-          "After making some web development applications, company started with dynamic web applications and software using .NET and Android app technology. It has certified .NET and android developers who takes care of every line of code.",
+          "After building static websites, the company moved into dynamic applications using .NET and Android. Certified developers began handling enterprise-grade projects.",
       },
       {
         title: "Primary Skills",
         content:
-          "For making responsive website we use HTML5, CSS3, JQuery, Bootstrap and ASP.NET. For Android applications we use JDK, Java Servlet and advanced android development tools. Company has graphics designers and SEO specialists.",
+          "Responsive web applications with HTML5, CSS3, JQuery, Bootstrap, and ASP.NET. Mobile solutions with Java, JDK, and advanced Android tools.",
       },
     ],
   },
-  // Add cards for other years as needed...
   {
     year: "2017",
     cards: [
       {
-        title: "Halfway Between the Gutter and the Stars",
+        title: "Market Recognition",
         content:
-          "The main achievement of the company is reputed clients and its own software applications which are currently in market operating very effectively.",
+          "The company built its reputation with reputed clients and launched its own software applications running effectively in the market.",
       },
       {
-        title: "",
+        title: "Team Expansion",
         content:
-          "Certified Developers, Testers, Designers and management team which always think “Customer is King” and work for clients.",
+          "Certified Developers, Testers, Designers, and Management united under one vision: ‘Customer is King’.",
       },
     ],
   },
   {
     year: "2019",
     cards: [
-      { title: "2019 Card 1", content: "Content for 2019 Card 1..." },
-      { title: "2019 Card 2", content: "Content for 2019 Card 2..." },
+      {
+        title: "Cloud Adoption",
+        content:
+          "We expanded into cloud technologies with AWS and Azure, offering DevOps and scalable solutions for enterprises.",
+      },
+      {
+        title: "Healthcare Domain",
+        content:
+          "Started delivering IT solutions for healthcare clients including **medical billing** and **medical coding** services.",
+      },
     ],
   },
   {
     year: "2021",
     cards: [
-      { title: "2021 Card 1", content: "Content for 2021 Card 1..." },
-      { title: "2021 Card 2", content: "Content for 2021 Card 2..." },
+      {
+        title: "Data & AI Journey",
+        content:
+          "Launched services in **Big Data, Data Analytics, and Data Science** to help clients make smarter decisions.",
+      },
+      {
+        title: "CRM & Enterprise Solutions",
+        content:
+          "Introduced **Salesforce development** and Microsoft services for enterprise-level solutions.",
+      },
     ],
   },
   {
     year: "2023",
     cards: [
-      { title: "2023 Card 1", content: "Content for 2023 Card 1..." },
-      { title: "2023 Card 2", content: "Content for 2023 Card 2..." },
+      {
+        title: "Next-Gen AI",
+        content:
+          "Adopted **Generative AI (AI Gen)** for automating workflows, chatbots, and smart enterprise solutions.",
+      },
+      {
+        title: "Diversification",
+        content:
+          "Expanded into advanced **Java technologies, .NET Core**, and **cross-platform app development**.",
+      },
     ],
   },
   {
     year: "2025",
     cards: [
-      { title: "2025 Card 1", content: "Content for 2025 Card 1..." },
-      { title: "2025 Card 2", content: "Content for 2025 Card 2..." },
+      {
+        title: "Innovating with Osisoft & IoT",
+        content:
+          "Delivering **industrial IoT solutions with Osisoft PI Systems**, integrating real-time operational data with analytics and AI.",
+      },
+      {
+        title: "Digital Marketing Excellence",
+        content:
+          "Building **DV360 (Google Marketing Platform)** expertise to help businesses with advanced programmatic advertising.",
+      },
     ],
   },
 ];
 
 function TimelineHistory() {
   const [selectedYear, setSelectedYear] = useState(timelineData[0].year);
-  const active = timelineData.find(item => item.year === selectedYear);
+  const active = timelineData.find((item) => item.year === selectedYear);
 
   return (
     <section className="py-10 bg-white">
-      <h2 className="text-3xl font-semibold text-center mb-10 text-gray-700">Our History</h2>
+      <h2 className="text-3xl font-semibold text-center mb-10 text-gray-700">
+        Our History
+      </h2>
 
       <div className="flex items-center justify-between max-w-4xl mx-auto mb-12 px-1">
         {timelineData.map((item, idx) => (
@@ -95,9 +128,11 @@ function TimelineHistory() {
           >
             <div
               className={`rounded-full flex items-center justify-center w-20 h-20 font-semibold text-lg z-10
-                ${selectedYear === item.year
-                  ? "bg-sky-500 text-white scale-110"
-                  : "border-2 border-sky-500 text-sky-600 bg-white transition-transform duration-200"}
+                ${
+                  selectedYear === item.year
+                    ? "bg-sky-500 text-white scale-110"
+                    : "border-2 border-sky-500 text-sky-600 bg-white transition-transform duration-200"
+                }
                 hover:bg-sky-500 hover:text-white hover:scale-110 cursor-pointer transition-all duration-300`}
             >
               {item.year}
@@ -120,7 +155,9 @@ function TimelineHistory() {
             className="bg-white border border-sky-100 shadow-sm rounded-md p-6 flex flex-col"
           >
             {card.title && (
-              <h3 className="text-2xl font-semibold mb-3 text-gray-700">{card.title}</h3>
+              <h3 className="text-2xl font-semibold mb-3 text-gray-700">
+                {card.title}
+              </h3>
             )}
             <p className="text-gray-600">{card.content}</p>
           </div>

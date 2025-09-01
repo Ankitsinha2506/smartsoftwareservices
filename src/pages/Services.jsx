@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 import { Code, Smartphone, Cloud, Brain } from 'lucide-react';
-import ServiceHero from './ServiceHero';
-import ServiceFeatures from './ServiceFeatures';
-import MainServices from './MainServices';
-import ThreeColumnFeatures from './ThreeColumnFeatures';
-import CoreFeatures from './CoreFeatures';
-import ServiceContactSection from './ServiceContactSection';
+import ServiceHero from '../components/ServiceHero';
+import ServiceFeatures from '../components/ServiceFeatures';
+import MainServices from '../components/MainServices';
+import CoreFeatures from '../components/CoreFeatures';
+import ThreeColumnFeatures from '../components/ThreeColumnFeatures';
+import ServiceContactSection from '../components/ServiceContactSection';
+
 
 const services = [
   {
@@ -93,8 +94,11 @@ const Services = () => {
 
       {/* Main Services */}
       <MainServices />
+      {/* Core Features Section */}
       <CoreFeatures />
+      {/* Three Column Features Section */}
       <ThreeColumnFeatures />
+      {/* Service Contact Section */}
       <ServiceContactSection />
 
 
