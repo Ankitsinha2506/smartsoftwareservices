@@ -18,7 +18,7 @@ const Home = () => {
             <ServicesOverview />
             <PortfolioGrid />
             <TechStack />
-            <BannerPortfolioGrid />
+            {/* <BannerPortfolioGrid /> */}
             <WelcomeSection />
             <StatsBar />
             <CompanyInfoSection />
