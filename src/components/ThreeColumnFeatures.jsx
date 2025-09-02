@@ -2,17 +2,17 @@ import React from "react";
 
 const features = [
   {
-    image: "https://in.pinterest.com/pin/361625045099630938/", // Replace with your actual path
+    image: "https://i.pinimg.com/736x/26/90/04/2690044a5f8a0f9b1c377c17ac89dbbb.jpg", // Replace with your actual path
     title: "Top Skilled Team",
     desc: "We are skilled in ASP.NET, MVC Architecture, Android Application Development, Web Application Development, Logo Designing, SEO, Hosting and Graphics Designing.",
   },
   {
-    image: "/images/support.jpg",
+    image: "https://i.pinimg.com/736x/9a/37/60/9a3760eba3fd26d3ceeb0f27579bbaca.jpg",
     title: "Better Customer Support",
     desc: `SMART Software Services offer you awesome support 24/7. We always think "Customer is King" at every phase of software Application Development.`,
   },
   {
-    image: "/images/office.jpg",
+    image: "https://i.pinimg.com/736x/99/f4/41/99f441b928302b6597d5dd53423cb8ae.jpg",
     title: "Beautiful Office Space",
     desc: "Company has multiple office locations in pune and every office is awesome for working in company or meeting with clients.",
   },
