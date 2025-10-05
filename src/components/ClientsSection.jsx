@@ -2,6 +2,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
+
+
 // Client Logo
 import Nexus from '../assets/clients/nexus.png';
 import RPBS from '../assets/clients/rpbs.png';
@@ -10,6 +12,14 @@ import Cubeage from '../assets/clients/cubeage.png';
 import JDIT from '../assets/clients/jdit.png';
 import Shreegraphics from '../assets/clients/shreegraphics.png';
 import Carnomia from '../assets/clients/carnomia.png';
+import ChakradharSwami from '../assets/clients/chakradharLogo.png';
+import Devcons from '../assets/clients/devcons.png';
+import Smartmatrix from '../assets/clients/smartmatrix.png';
+import Nimbja from '../assets/clients/nimbja.png';
+import Quickmanagement from '../assets/clients/QMS.png';
+
+
+
 
 function ClientsSection() {
   const clientLogos = [
@@ -20,6 +30,7 @@ function ClientsSection() {
     { src: JDIT, alt: "JDIT" },
     { src: Shreegraphics, alt: "Shreegraphics" },
     { src: Carnomia, alt: "Carnomia" },
+    
   ];
   return (
     <section className="bg-gray-50 py-10">
