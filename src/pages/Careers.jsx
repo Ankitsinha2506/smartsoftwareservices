@@ -202,7 +202,7 @@ const Careers = () => {
               {/* Image Section */}
               <div className="hidden md:block">
                 <img
-                  src="https://i.pinimg.com/1200x/64/9b/39/649b39b31d4d02e335360b6f1fcfb7df.jpg"
+                  src="https://i.pinimg.com/736x/10/0e/8b/100e8b1f1ded4e559d0a17ae80b09a31.jpg"
                   alt="Apply Illustration"
                   className="rounded-lg shadow-md w-full object-cover"
                 />
