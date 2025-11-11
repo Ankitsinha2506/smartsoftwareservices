@@ -30,6 +30,11 @@ function ClientsSection() {
     { src: JDIT, alt: "JDIT" },
     { src: Shreegraphics, alt: "Shreegraphics" },
     { src: Carnomia, alt: "Carnomia" },
+    { src: ChakradharSwami, alt: "ChakradharSwami" },
+    { src: Devcons, alt: "Devcons" },
+    { src: Smartmatrix, alt: "Smartmatrix" },
+    { src: Nimbja, alt: "Nimbja" },
+    { src: Quickmanagement, alt: "Quickmanagement" },
     
   ];
   return (
