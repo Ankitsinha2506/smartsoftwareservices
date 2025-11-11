@@ -42,7 +42,7 @@ const timelineData = [
       {
         title: "Team Expansion",
         content:
-          "Certified Developers, Testers, Designers, and Management united under one vision: ‘Customer is King’.",
+          "Certified Developers, Testers, Designers, and Management united under one vision: <b>Customer is King</b>.",
       },
     ],
   },
@@ -57,7 +57,7 @@ const timelineData = [
       {
         title: "Healthcare Domain",
         content:
-          "Started delivering IT solutions for healthcare clients including **medical billing** and **medical coding** services.",
+          "Started delivering IT solutions for healthcare clients including <b>medical billing</b> and <b>medical coding</b> services.",
       },
     ],
   },
@@ -67,12 +67,12 @@ const timelineData = [
       {
         title: "Data & AI Journey",
         content:
-          "Launched services in **Big Data, Data Analytics, and Data Science** to help clients make smarter decisions.",
+          "Launched services in <b>Big Data, Data Analytics, and Data Science</b> to help clients make smarter decisions.",
       },
       {
         title: "CRM & Enterprise Solutions",
         content:
-          "Introduced **Salesforce development** and Microsoft services for enterprise-level solutions.",
+          "Introduced <b>Salesforce development</b> and Microsoft services for enterprise-level solutions.",
       },
     ],
   },
@@ -82,12 +82,12 @@ const timelineData = [
       {
         title: "Next-Gen AI",
         content:
-          "Adopted **Generative AI (AI Gen)** for automating workflows, chatbots, and smart enterprise solutions.",
+          "Adopted <b>Generative AI (AI Gen)</b> for automating workflows, chatbots, and smart enterprise solutions.",
       },
       {
         title: "Diversification",
         content:
-          "Expanded into advanced **Java technologies, .NET Core**, and **cross-platform app development**.",
+          "Expanded into advanced <b>Java technologies, .NET Core</b>, and <b>cross-platform app development</b>.",
       },
     ],
   },
@@ -97,12 +97,12 @@ const timelineData = [
       {
         title: "Innovating with Osisoft & IoT",
         content:
-          "Delivering **industrial IoT solutions with Osisoft PI Systems**, integrating real-time operational data with analytics and AI.",
+          "Delivering <b>industrial IoT solutions with Osisoft PI Systems</b>, integrating real-time operational data with analytics and AI.",
       },
       {
         title: "Digital Marketing Excellence",
         content:
-          "Building **DV360 (Google Marketing Platform)** expertise to help businesses with advanced programmatic advertising.",
+          "Building <b>DV360 (Google Marketing Platform)</b> expertise to help businesses with advanced programmatic advertising.",
       },
     ],
   },
@@ -159,7 +159,10 @@ function TimelineHistory() {
                 {card.title}
               </h3>
             )}
-            <p className="text-gray-600">{card.content}</p>
+            <p
+              className="text-gray-600"
+              dangerouslySetInnerHTML={{ __html: card.content }}
+            />
           </div>
         ))}
       </div>
