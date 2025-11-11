@@ -12,11 +12,7 @@ import Cubeage from '../assets/clients/cubeage.png';
 import JDIT from '../assets/clients/jdit.png';
 import Shreegraphics from '../assets/clients/shreegraphics.png';
 import Carnomia from '../assets/clients/carnomia.png';
-import ChakradharSwami from '../assets/clients/chakradharLogo.png';
-import Devcons from '../assets/clients/devcons.png';
-import Smartmatrix from '../assets/clients/smartmatrix.png';
-import Nimbja from '../assets/clients/nimbja.png';
-import Quickmanagement from '../assets/clients/QMS.png';
+
 
 
 
@@ -30,11 +26,7 @@ function ClientsSection() {
     { src: JDIT, alt: "JDIT" },
     { src: Shreegraphics, alt: "Shreegraphics" },
     { src: Carnomia, alt: "Carnomia" },
-    { src: ChakradharSwami, alt: "ChakradharSwami" },
-    { src: Devcons, alt: "Devcons" },
-    { src: Smartmatrix, alt: "Smartmatrix" },
-    { src: Nimbja, alt: "Nimbja" },
-    { src: Quickmanagement, alt: "Quickmanagement" },
+    
     
   ];
   return (
